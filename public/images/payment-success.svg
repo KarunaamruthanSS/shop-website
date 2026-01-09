@@ -1,0 +1,7 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial" font-size="24" fill="#28a745">🏛️ Payment Success</text>
+  <text x="200" y="160" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">Historic Monument</text>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="#999">Replace this with your image:</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial" font-size="12" fill="#999">/public/images/payment-success.jpg</text>
+</svg>
