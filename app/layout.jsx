@@ -17,6 +17,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6241972269720165"
+            crossorigin="anonymous">
+
+        </script>
+      </head>
       <body>
         <ThemeProvider>
           <ToastProvider>
