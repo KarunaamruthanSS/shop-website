@@ -23,10 +23,8 @@ export default function CartPage() {
         // For logged-in users, fetch from database
         await fetchDbCart();
       } else {
-        // For guest users, wait for cart to load from localStorage
-        if (cartLoaded) {
-          setLoading(false);
-        }
+        // For non-authenticated users, cart should be empty
+        setLoading(false);
       }
     };
 
@@ -112,14 +110,14 @@ export default function CartPage() {
     );
   }
 
-  const currentCart = user ? dbCart : cart;
+  const currentCart = user ? dbCart : [];
   const isEmpty = currentCart.length === 0;
 
   const calculateTotal = () => {
     if (user) {
       return dbCart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
     } else {
-      return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      return 0;
     }
   };
 
@@ -134,22 +132,60 @@ export default function CartPage() {
           margin: "20px 0",
           border: `1px solid ${colors.border}`
         }}>
-          <p style={{ fontSize: "18px", color: colors.textSecondary, marginBottom: 20 }}>
-            Your cart is empty
-          </p>
-          <Link href="/products">
-            <button style={{
-              padding: "12px 24px",
-              backgroundColor: colors.primary,
-              color: "white",
-              border: "none",
-              borderRadius: 4,
-              cursor: "pointer",
-              fontSize: "16px"
-            }}>
-              Continue Shopping
-            </button>
-          </Link>
+          {!user ? (
+            <>
+              <p style={{ fontSize: "18px", color: colors.textSecondary, marginBottom: 20 }}>
+                Please login to view your cart
+              </p>
+              <div style={{ display: "flex", gap: 15, justifyContent: "center", flexWrap: "wrap" }}>
+                <Link href="/login">
+                  <button style={{
+                    padding: "12px 24px",
+                    backgroundColor: colors.primary,
+                    color: "white",
+                    border: "none",
+                    borderRadius: 4,
+                    cursor: "pointer",
+                    fontSize: "16px"
+                  }}>
+                    Login
+                  </button>
+                </Link>
+                <Link href="/register">
+                  <button style={{
+                    padding: "12px 24px",
+                    backgroundColor: colors.success,
+                    color: "white",
+                    border: "none",
+                    borderRadius: 4,
+                    cursor: "pointer",
+                    fontSize: "16px"
+                  }}>
+                    Register
+                  </button>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <p style={{ fontSize: "18px", color: colors.textSecondary, marginBottom: 20 }}>
+                Your cart is empty
+              </p>
+              <Link href="/products">
+                <button style={{
+                  padding: "12px 24px",
+                  backgroundColor: colors.primary,
+                  color: "white",
+                  border: "none",
+                  borderRadius: 4,
+                  cursor: "pointer",
+                  fontSize: "16px"
+                }}>
+                  Continue Shopping
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </main>
     );

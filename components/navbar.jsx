@@ -11,7 +11,7 @@ import LanguageSwitcher from "./language-switcher";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { cartCount, isLoaded: cartLoaded } = useCart();
+  const { cartCount, isLoaded: cartLoaded, isAuthenticated } = useCart();
   const { t } = useTranslation();
   const { showSuccess } = useToast();
   const { user, loading, logout } = useSession();
@@ -58,18 +58,10 @@ export default function Navbar() {
             {/* Language Switcher */}
             <LanguageSwitcher />
 
-            {/* Navigation Links */}
-            <Link href="/about-us" className="nav-link">
-              {t('About')}
-            </Link>
-            <Link href="/contact-us" className="nav-link">
-              {t('Contact')}
-            </Link>
-
             {/* Cart */}
             <Link href="/cart" className="cart-link">
               {t('Cart')}
-              {cartLoaded && cartCount > 0 && (
+              {cartLoaded && isAuthenticated && cartCount > 0 && (
                 <span className="cart-badge">
                   {cartCount}
                 </span>
@@ -122,97 +114,91 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="mobile-nav-menu">
-            <div className="mobile-nav-content">
-              {/* Language Switcher */}
-              <div className="mobile-nav-item">
-                <LanguageSwitcher />
-              </div>
-
-              {/* Shop Link */}
-              <Link href="/products" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-                🛍️ {t('Shop')}
-              </Link>
-
-              {/* About Link */}
-              <Link href="/about-us" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-                ℹ️ {t('About')}
-              </Link>
-
-              {/* Contact Link */}
-              <Link href="/contact-us" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-                📞 {t('Contact')}
-              </Link>
-
-              {/* About Us Link */}
-              <Link href="/about-us" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-                🏢 {t('About Us')}
-              </Link>
-
-              {/* Contact Us Link */}
-              <Link href="/contact-us" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-                📞 {t('Contact Us')}
-              </Link>
-
-              {/* Cart */}
-              <Link href="/cart" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-                <div className="mobile-cart">
-                  🛒 {t('Cart')}
-                  {cartLoaded && cartCount > 0 && (
-                    <span className="cart-badge mobile">
-                      {cartCount}
-                    </span>
-                  )}
+          <>
+            {/* Overlay to prevent clicking through */}
+            <div className="mobile-nav-overlay" onClick={() => setMobileMenuOpen(false)}></div>
+            <div className="mobile-nav-menu">
+              <div className="mobile-nav-content">
+                {/* Language Switcher */}
+                <div className="mobile-nav-item">
+                  <LanguageSwitcher />
                 </div>
-              </Link>
 
-              {loading ? (
-                <span className="mobile-nav-item">{t('Loading')}...</span>
-              ) : user ? (
-                <>
-                  {/* User is logged in */}
-                  <div className="mobile-user-section">
-                    <div className="mobile-welcome">
-                      👤 {t('Welcome')}, {user.name}
-                    </div>
-                    
-                    <div className="mobile-user-actions">
-                      {user.role === "ADMIN" && (
-                        <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
-                          <button className="btn mobile-btn btn-admin">
-                            🔧 {t('Admin Panel')}
-                          </button>
-                        </Link>
-                      )}
+                {/* Shop Link */}
+                <Link href="/products" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                  🛍️ {t('Shop')}
+                </Link>
 
-                      <button
-                        onClick={handleLogout}
-                        className="btn mobile-btn btn-logout"
-                      >
-                        🚪 {t('Logout')}
-                      </button>
+                {/* About Link */}
+                <Link href="/about-us" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                  ℹ️ {t('About')}
+                </Link>
+
+                {/* Contact Link */}
+                <Link href="/contact-us" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                  📞 {t('Contact')}
+                </Link>
+
+                {/* Cart */}
+                <Link href="/cart" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                  <div className="mobile-cart">
+                    🛒 {t('Cart')}
+                    {cartLoaded && isAuthenticated && cartCount > 0 && (
+                      <span className="cart-badge mobile">
+                        {cartCount}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+
+                {loading ? (
+                  <span className="mobile-nav-item">{t('Loading')}...</span>
+                ) : user ? (
+                  <>
+                    {/* User is logged in */}
+                    <div className="mobile-user-section">
+                      <div className="mobile-welcome">
+                        👤 {t('Welcome')}, {user.name}
+                      </div>
+                      
+                      <div className="mobile-user-actions">
+                        {user.role === "ADMIN" && (
+                          <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                            <button className="btn mobile-btn btn-admin">
+                              🔧 {t('Admin Panel')}
+                            </button>
+                          </Link>
+                        )}
+
+                        <button
+                          onClick={handleLogout}
+                          className="btn mobile-btn btn-logout"
+                        >
+                          🚪 {t('Logout')}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* User is not logged in */}
-                  <div className="mobile-auth-section">
-                    <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                      <button className="btn mobile-btn btn-login">
-                        🔑 {t('Login')}
-                      </button>
-                    </Link>
-                    <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
-                      <button className="btn mobile-btn btn-register">
-                        📝 {t('Register')}
-                      </button>
-                    </Link>
-                  </div>
-                </>
-              )}
+                  </>
+                ) : (
+                  <>
+                    {/* User is not logged in */}
+                    <div className="mobile-auth-section">
+                      <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                        <button className="btn mobile-btn btn-login">
+                          🔑 {t('Login')}
+                        </button>
+                      </Link>
+                      <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
+                        <button className="btn mobile-btn btn-register">
+                          📝 {t('Register')}
+                        </button>
+                      </Link>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
+          </>
         )}
       </nav>
 
@@ -223,6 +209,7 @@ export default function Navbar() {
           background-color: white;
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
           position: relative;
+          z-index: 100;
         }
 
         .nav-container {
@@ -368,6 +355,16 @@ export default function Navbar() {
           font-size: 14px;
         }
 
+        .mobile-nav-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
+
         .mobile-nav-menu {
           position: absolute;
           top: 100%;
@@ -379,6 +376,8 @@ export default function Navbar() {
           padding: 15px;
           z-index: 1000;
           box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          max-height: 80vh;
+          overflow-y: auto;
         }
 
         .mobile-nav-content {

@@ -4,6 +4,8 @@ import { withAuth } from '../../../lib/middleware'
 import { sendOrderEmail } from '../../../lib/email'
 import sendOrderSMSIndia, { sendOrderSMSLocal } from '../../../lib/sms'
 
+export const dynamic = 'force-dynamic'
+
 export const POST = withAuth(async (req, context) => {
   try {
     const { cart, total } = await req.json()

@@ -156,7 +156,7 @@ export default function RegisterPage() {
 
             <div className="form-group">
               <label className="form-label">
-                {t('Date of Birth (optional)')}:
+                {t('Date of Birth ')}:
               </label>
               <input
                 type="date"

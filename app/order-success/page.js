@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useTranslation } from "../../lib/translationContext";
 import { useToast } from "../../lib/toastContext";
 
-export default function OrderSuccessPage() {
+function OrderSuccessContent() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
@@ -219,5 +219,17 @@ export default function OrderSuccessPage() {
         </p>
       </div>
     </main>
+  );
+}
+
+export default function OrderSuccessPage() {
+  return (
+    <Suspense fallback={
+      <main style={{ padding: 20, textAlign: "center" }}>
+        <h2>Loading...</h2>
+      </main>
+    }>
+      <OrderSuccessContent />
+    </Suspense>
   );
 }

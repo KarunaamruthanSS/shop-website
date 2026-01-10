@@ -19,8 +19,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThemeProvider>
-          <TranslationProvider>
-            <ToastProvider>
+          <ToastProvider>
+            <TranslationProvider>
               <SessionProvider>
                 <CartProvider>
                   <Navbar />
@@ -30,8 +30,8 @@ export default function RootLayout({ children }) {
                   <ToastContainer />
                 </CartProvider>
               </SessionProvider>
-            </ToastProvider>
-          </TranslationProvider>
+            </TranslationProvider>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>

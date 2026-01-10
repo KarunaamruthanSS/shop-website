@@ -77,6 +77,11 @@ export default function ProductsPage() {
 
   const handleAddToCart = async (product) => {
     try {
+      if (!user) {
+        showError(t('Please login to add items to cart'));
+        return;
+      }
+
       if (user) {
         const res = await fetch("/api/cart", {
           method: "POST",
@@ -94,8 +99,13 @@ export default function ProductsPage() {
           showError(data.error || "Failed to add to cart");
         }
       } else {
-        addToCart(product);
-        showSuccess(t('Product added to cart!'));
+        // This should not happen now, but keeping as fallback
+        const success = addToCart(product);
+        if (success) {
+          showSuccess(t('Product added to cart!'));
+        } else {
+          showError(t('Please login to add items to cart'));
+        }
       }
     } catch (error) {
       console.error('Error adding to cart:', error);

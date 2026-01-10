@@ -339,7 +339,7 @@ export default function CheckoutPage() {
         textAlign: "center"
       }}>
         <p style={{ margin: 0, color: "#0c5460", fontSize: "14px" }}>
-          🔒 This is a demo checkout. No actual payment will be processed.
+          🔒 This is a notification for shop. Actual payment will be processed at shop.
         </p>
       </div>
 

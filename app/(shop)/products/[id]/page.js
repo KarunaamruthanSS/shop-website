@@ -46,6 +46,11 @@ export default function ProductDetailPage() {
   const handleAddToCart = async () => {
     if (!product) return;
 
+    if (!user) {
+      showError(t('Please login to add items to cart'));
+      return;
+    }
+
     try {
       if (user) {
         // Add to database cart
@@ -68,11 +73,16 @@ export default function ProductDetailPage() {
           showError(data.error || "Failed to add to cart");
         }
       } else {
-        // Add to local cart (for guest users)
+        // This should not happen now, but keeping as fallback
+        let success = true;
         for (let i = 0; i < quantity; i++) {
-          addToCart(product);
+          success = addToCart(product) && success;
         }
-        showSuccess(t(`${quantity} ${product.name}(s) added to cart!`));
+        if (success) {
+          showSuccess(t(`${quantity} ${product.name}(s) added to cart!`));
+        } else {
+          showError(t('Please login to add items to cart'));
+        }
       }
     } catch (error) {
       console.error('Error adding to cart:', error);

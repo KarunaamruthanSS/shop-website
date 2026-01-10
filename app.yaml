@@ -1,0 +1,16 @@
+name: shop-website
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: yourusername/shop-website
+    branch: main
+  run_command: npm start
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  routes:
+  - path: /
+  envs:
+  - key: NODE_ENV
+    value: production

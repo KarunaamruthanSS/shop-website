@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import sendOrderSMSIndia, { sendOrderSMSLocal } from '../../../lib/sms'
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(request) {
   try {
     const { phone, service } = await request.json()

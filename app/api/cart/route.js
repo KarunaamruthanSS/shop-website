@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { prisma } from '../../../lib/prisma'
 import { withAuth } from '../../../lib/middleware'
 
+export const dynamic = 'force-dynamic'
+
 export const GET = withAuth(async (req, context) => {
   try {
     const cartItems = await prisma.cartItem.findMany({

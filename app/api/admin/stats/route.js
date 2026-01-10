@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/prisma'
 import { validateAdminAuth } from '../../../../lib/adminAuth'
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 export async function GET(request) {
   try {
     // Validate admin authentication

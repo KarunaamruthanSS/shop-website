@@ -161,13 +161,15 @@ export default function LoginPage() {
           <p className="auth-link">
             {t('Don\'t have an account?')} <Link href="/register">{t('Register here')}</Link>
           </p>
-
+          
+          {/*
           <div className="test-accounts">
             <h4>{t('Test Accounts')}:</h4>
             <p><strong>{t('Admin')}:</strong> admin@hardware.com / +1234567890 / admin123</p>
             <p><strong>User:</strong> user@test.com / +9876543210 / user123</p>
           </div>
-
+          */}
+          
           <div className="session-info">
             <p style={{ fontSize: "12px", color: "#666", textAlign: "center", marginTop: "15px" }}>
               ⏰ Sessions expire after 7 minutes of inactivity
