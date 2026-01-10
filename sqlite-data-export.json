@@ -1,0 +1,379 @@
+{
+  "users": [
+    {
+      "id": "cmjmraw8p0000sh3b2znlajui",
+      "email": "admin@hardware.com",
+      "name": "Admin User",
+      "password": "$2a$12$50KBZ2.Q39npb6YbckODE.qO6PGaR/PT.bl7YxLzyAJyhuakyZcrK",
+      "role": "ADMIN",
+      "createdAt": 1766746588345,
+      "updatedAt": 1766746588345,
+      "dateOfBirth": null,
+      "phone": null
+    },
+    {
+      "id": "cmjmrawqo0001sh3b7gobx90b",
+      "email": "user@test.com",
+      "name": "Test User",
+      "password": "$2a$12$CFbGh11cMgaMiIh7GzMOu.Cr2EX.NlJP.8op0Q65ZEUauKTSWrjYa",
+      "role": "USER",
+      "createdAt": 1766746588992,
+      "updatedAt": 1766746588992,
+      "dateOfBirth": null,
+      "phone": null
+    },
+    {
+      "id": "cmju91yt00000wmp5i20mcqfe",
+      "email": "karunaamruthanss@gmail.com",
+      "name": "Saravanan",
+      "password": "$2a$12$P5KosGHSjkaxyBpVzBMHyuPRERFEn0vYpIYkPq4RIH3wY0MD8PXVu",
+      "role": "USER",
+      "createdAt": 1767199668083,
+      "updatedAt": 1767199668083,
+      "dateOfBirth": 1138838400000,
+      "phone": "9442712590"
+    },
+    {
+      "id": "cmjvekqpj000an78lwsqgffi4",
+      "email": "23pd17@psgtech.ac.in",
+      "name": "Test1",
+      "password": "$2a$12$9wyRpFiq7sWM.Qc/rVPslO2/r/3UqOesp1/iiNv4qPTeAfl3r0JB2",
+      "role": "USER",
+      "createdAt": 1767269408308,
+      "updatedAt": 1767269408308,
+      "dateOfBirth": 1044144000000,
+      "phone": "9344013310"
+    },
+    {
+      "id": "cmk40ttbs0000okghhgzers88",
+      "email": "test@hardware.com",
+      "name": "Test_2",
+      "password": "$2a$12$1epJrT4xl17PtN1ziNZLkOMW1HjaNtWr9xk5MoBzq1TdEWUGPnw32",
+      "role": "USER",
+      "createdAt": 1767790512566,
+      "updatedAt": 1767790512566,
+      "dateOfBirth": 978825600000,
+      "phone": "9159591595"
+    },
+    {
+      "id": "cmk40vwzw0001okghfugdo8ir",
+      "email": "test1@hardware.com",
+      "name": "Test_3",
+      "password": "$2a$12$X9yaW7t41tQIYHOEoi9h.egjJNcqQdPvHZm6.vGPp1iiVpq/XeMZO",
+      "role": "USER",
+      "createdAt": 1767790610636,
+      "updatedAt": 1767790610636,
+      "dateOfBirth": 852595200000,
+      "phone": "+9191234567890"
+    },
+    {
+      "id": "cmk5eq57e00001rkco5p1euwp",
+      "email": "test4@hardware.com",
+      "name": "Test_4",
+      "password": "$2a$12$7p/KnOyNdr.sNu0iznTw6u.PI3VxBbcbPng3aRVGJwVDjfVIl1QG.",
+      "role": "USER",
+      "createdAt": 1767874322136,
+      "updatedAt": 1767874322136,
+      "dateOfBirth": 789523200000,
+      "phone": "9876543210"
+    }
+  ],
+  "products": [
+    {
+      "id": "cmjmrcdqd0002rtg21mhhthzl",
+      "name": "LED Bulb 9W",
+      "description": "Energy efficient LED bulb with warm white light",
+      "price": 120,
+      "stock": 49,
+      "category": "Lighting",
+      "imageUrl": null,
+      "isActive": 1,
+      "createdAt": 1766746657670,
+      "updatedAt": 1767266653831
+    },
+    {
+      "id": "cmjmrcdtm0003rtg2e9a55xsp",
+      "name": "Wall Switch",
+      "description": "Single pole wall switch with modern design",
+      "price": 50,
+      "stock": 100,
+      "category": "Electrical",
+      "imageUrl": null,
+      "isActive": 1,
+      "createdAt": 1766746657786,
+      "updatedAt": 1766746657786
+    },
+    {
+      "id": "cmjmrcdwx0004rtg2p7ra79tf",
+      "name": "Wire Coil 100m",
+      "description": "2.5mm copper wire coil for electrical installations",
+      "price": 450,
+      "stock": 24,
+      "category": "Wiring",
+      "imageUrl": null,
+      "isActive": 1,
+      "createdAt": 1766746657905,
+      "updatedAt": 1767269488769
+    },
+    {
+      "id": "cmjmrcdz60005rtg22kmw73no",
+      "name": "Circuit Breaker 16A",
+      "description": "Single pole MCB for electrical protection",
+      "price": 280,
+      "stock": 23,
+      "category": "Protection",
+      "imageUrl": null,
+      "isActive": 1,
+      "createdAt": 1766746657986,
+      "updatedAt": 1767956703804
+    },
+    {
+      "id": "cmjmrce4r0006rtg20o2znyz5",
+      "name": "Extension Cord 5m",
+      "description": "4-socket extension cord with surge protection",
+      "price": 350,
+      "stock": 14,
+      "category": "Accessories",
+      "imageUrl": null,
+      "isActive": 1,
+      "createdAt": 1766746658187,
+      "updatedAt": 1768032806271
+    },
+    {
+      "id": "cmjp3ykpr0000xpkppm5nnsmb",
+      "name": "Insulation Tape",
+      "description": "Used for wiring works.",
+      "price": 10,
+      "stock": 20,
+      "category": "Wiring",
+      "imageUrl": "",
+      "isActive": 0,
+      "createdAt": 1766888780891,
+      "updatedAt": 1766889969803
+    },
+    {
+      "id": "cmjraf9od00004uy5nug5evmh",
+      "name": "Insulation Tape",
+      "description": "Used for insulation and wiring",
+      "price": 25,
+      "stock": 18,
+      "category": "Wiring",
+      "imageUrl": "",
+      "isActive": 1,
+      "createdAt": 1767020569788,
+      "updatedAt": 1768032806263
+    }
+  ],
+  "orders": [
+    {
+      "id": "cmjp4sxgw0007xeolf2ha5ipz",
+      "userId": null,
+      "total": 980,
+      "status": "CANCELLED",
+      "createdAt": 1766890197103,
+      "updatedAt": 1767791868102
+    },
+    {
+      "id": "cmju94qgx0004wmp5c6hyq9h9",
+      "userId": "cmju91yt00000wmp5i20mcqfe",
+      "total": 560,
+      "status": "DELIVERED",
+      "createdAt": 1767199797249,
+      "updatedAt": 1767712849712
+    },
+    {
+      "id": "cmju99tfu000awmp5ypwaxgm9",
+      "userId": "cmju91yt00000wmp5i20mcqfe",
+      "total": 75,
+      "status": "PENDING",
+      "createdAt": 1767200034377,
+      "updatedAt": 1767200034377
+    },
+    {
+      "id": "cmjvcbxly00052ger40l0x0dr",
+      "userId": "cmju91yt00000wmp5i20mcqfe",
+      "total": 630,
+      "status": "PENDING",
+      "createdAt": 1767265638118,
+      "updatedAt": 1767265638118
+    },
+    {
+      "id": "cmjvcxpaa000510f5kca9o995",
+      "userId": "cmju91yt00000wmp5i20mcqfe",
+      "total": 145,
+      "status": "SHIPPED",
+      "createdAt": 1767266653762,
+      "updatedAt": 1767789108627
+    },
+    {
+      "id": "cmjvdojr90005n78lmbl8ilma",
+      "userId": "cmju91yt00000wmp5i20mcqfe",
+      "total": 630,
+      "status": "DELIVERED",
+      "createdAt": 1767267906306,
+      "updatedAt": 1767711985993
+    },
+    {
+      "id": "cmjvemgr4000gn78l44p5tydb",
+      "userId": "cmjvekqpj000an78lwsqgffi4",
+      "total": 475,
+      "status": "DELIVERED",
+      "createdAt": 1767269488720,
+      "updatedAt": 1767709972528
+    },
+    {
+      "id": "cmk6qeeab0005akvqfwecnyg9",
+      "userId": "cmk40vwzw0001okghfugdo8ir",
+      "total": 630,
+      "status": "SHIPPED",
+      "createdAt": 1767954395599,
+      "updatedAt": 1767954482088
+    },
+    {
+      "id": "cmk6rrv8z000fakvqh4fjwnxm",
+      "userId": "cmk40vwzw0001okghfugdo8ir",
+      "total": 305,
+      "status": "PENDING",
+      "createdAt": 1767956703731,
+      "updatedAt": 1767956703731
+    },
+    {
+      "id": "cmk81301k00053ny3pz050dst",
+      "userId": "cmk40vwzw0001okghfugdo8ir",
+      "total": 375,
+      "status": "PENDING",
+      "createdAt": 1768032805879,
+      "updatedAt": 1768032805879
+    }
+  ],
+  "orderItems": [
+    {
+      "id": "cmjp4sxhz0009xeolrhb0gduz",
+      "orderId": "cmjp4sxgw0007xeolf2ha5ipz",
+      "productId": "cmjmrcdz60005rtg22kmw73no",
+      "quantity": 1,
+      "price": 280
+    },
+    {
+      "id": "cmjp4sxi6000bxeolj1f9vlg4",
+      "orderId": "cmjp4sxgw0007xeolf2ha5ipz",
+      "productId": "cmjmrce4r0006rtg20o2znyz5",
+      "quantity": 2,
+      "price": 350
+    },
+    {
+      "id": "cmju94qhe0006wmp5bmjxxc49",
+      "orderId": "cmju94qgx0004wmp5c6hyq9h9",
+      "productId": "cmjmrcdz60005rtg22kmw73no",
+      "quantity": 2,
+      "price": 280
+    },
+    {
+      "id": "cmju99tmc000cwmp54zo5cl70",
+      "orderId": "cmju99tfu000awmp5ypwaxgm9",
+      "productId": "cmjraf9od00004uy5nug5evmh",
+      "quantity": 3,
+      "price": 25
+    },
+    {
+      "id": "cmjvcbxml00072gerj2u1qyga",
+      "orderId": "cmjvcbxly00052ger40l0x0dr",
+      "productId": "cmjmrcdz60005rtg22kmw73no",
+      "quantity": 1,
+      "price": 280
+    },
+    {
+      "id": "cmjvcbxn100092geri2lzymlt",
+      "orderId": "cmjvcbxly00052ger40l0x0dr",
+      "productId": "cmjmrce4r0006rtg20o2znyz5",
+      "quantity": 1,
+      "price": 350
+    },
+    {
+      "id": "cmjvcxpaq000710f5z747o0xq",
+      "orderId": "cmjvcxpaa000510f5kca9o995",
+      "productId": "cmjmrcdqd0002rtg21mhhthzl",
+      "quantity": 1,
+      "price": 120
+    },
+    {
+      "id": "cmjvcxpav000910f5r5dwyvop",
+      "orderId": "cmjvcxpaa000510f5kca9o995",
+      "productId": "cmjraf9od00004uy5nug5evmh",
+      "quantity": 1,
+      "price": 25
+    },
+    {
+      "id": "cmjvdok0b0007n78lvgskl9zx",
+      "orderId": "cmjvdojr90005n78lmbl8ilma",
+      "productId": "cmjmrce4r0006rtg20o2znyz5",
+      "quantity": 1,
+      "price": 350
+    },
+    {
+      "id": "cmjvdok0h0009n78l6c2utw81",
+      "orderId": "cmjvdojr90005n78lmbl8ilma",
+      "productId": "cmjmrcdz60005rtg22kmw73no",
+      "quantity": 1,
+      "price": 280
+    },
+    {
+      "id": "cmjvemgrq000in78lzcmnej21",
+      "orderId": "cmjvemgr4000gn78l44p5tydb",
+      "productId": "cmjmrcdwx0004rtg2p7ra79tf",
+      "quantity": 1,
+      "price": 450
+    },
+    {
+      "id": "cmjvemgrs000kn78l9inzl9l3",
+      "orderId": "cmjvemgr4000gn78l44p5tydb",
+      "productId": "cmjraf9od00004uy5nug5evmh",
+      "quantity": 1,
+      "price": 25
+    },
+    {
+      "id": "cmk6qeeb00007akvq2r0jrh7g",
+      "orderId": "cmk6qeeab0005akvqfwecnyg9",
+      "productId": "cmjmrce4r0006rtg20o2znyz5",
+      "quantity": 1,
+      "price": 350
+    },
+    {
+      "id": "cmk6qeeb50009akvqx10y8o9l",
+      "orderId": "cmk6qeeab0005akvqfwecnyg9",
+      "productId": "cmjmrcdz60005rtg22kmw73no",
+      "quantity": 1,
+      "price": 280
+    },
+    {
+      "id": "cmk6rrv9u000hakvqxtvaiii8",
+      "orderId": "cmk6rrv8z000fakvqh4fjwnxm",
+      "productId": "cmjraf9od00004uy5nug5evmh",
+      "quantity": 1,
+      "price": 25
+    },
+    {
+      "id": "cmk6rrv9x000jakvq3mu3y20w",
+      "orderId": "cmk6rrv8z000fakvqh4fjwnxm",
+      "productId": "cmjmrcdz60005rtg22kmw73no",
+      "quantity": 1,
+      "price": 280
+    },
+    {
+      "id": "cmk81303q00073ny3ie4ycr3j",
+      "orderId": "cmk81301k00053ny3pz050dst",
+      "productId": "cmjraf9od00004uy5nug5evmh",
+      "quantity": 1,
+      "price": 25
+    },
+    {
+      "id": "cmk81303t00093ny33o8ldkdm",
+      "orderId": "cmk81301k00053ny3pz050dst",
+      "productId": "cmjmrce4r0006rtg20o2znyz5",
+      "quantity": 1,
+      "price": 350
+    }
+  ],
+  "cartItems": [],
+  "exportedAt": "2026-01-10T11:57:09.375Z"
+}
