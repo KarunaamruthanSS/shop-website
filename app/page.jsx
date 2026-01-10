@@ -2,6 +2,30 @@
 
 import { useRouter } from "next/navigation";
 import { useTranslation } from "../lib/translationContext";
+import { useState } from "react";
+
+// FAQ Item Component
+function FAQItem({ question, answer }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="faq-item">
+      <button
+        className={`faq-question ${isOpen ? 'active' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+        type="button"
+      >
+        <span>{question}</span>
+        <span className={`faq-icon ${isOpen ? 'rotate' : ''}`}>▼</span>
+      </button>
+      {isOpen && (
+        <div className="faq-answer">
+          <p>{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -35,6 +59,12 @@ export default function HomePage() {
             {t('Create Account')}
           </button>
         </div>
+        <h2 className="hero-title">
+          {t('Why hardwares are important?')} 🛠️
+        </h2>
+        <p className="hero-description">
+          {t('Hardware products play a vital role in construction, maintenance, and everyday repairs in homes and businesses. Quality hardware items such as electrical fittings, tools, fasteners, and plumbing materials ensure safety and long-lasting performance. Reliable hardware is essential for building strong infrastructure and maintaining modern living standards. Hardware stores provide essential materials that support residential, commercial, and industrial development. Using the right hardware helps reduce repair costs and improves energy efficiency. Professionals and homeowners rely on hardware products for installation, upgrades, and maintenance work. Proper hardware selection prevents accidents and improves overall system reliability. Modern hardware solutions support smart technology and sustainable construction practices. Hardware products contribute significantly to economic growth and job creation. Without dependable hardware, daily operations in construction, electrical, and mechanical fields would not be possible.')}
+        </p>
       </div>
 
       {/* Features Section */}
@@ -91,8 +121,11 @@ export default function HomePage() {
               onClick={() => router.push('/products')}
               role="button"
               tabIndex={0}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') router.push('/products');
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  router.push('/products');
+                }
               }}
             >
               <div className="category-icon">{category.icon}</div>
@@ -101,6 +134,37 @@ export default function HomePage() {
                 {category.description}
               </p>
             </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="section">
+        <h2 className="section-title">{t('Frequently Asked Questions')}</h2>
+        <div className="faq-container">
+          {[
+            {
+              question: t('What are hardware products used for?'),
+              answer: t('Hardware products are used for construction, electrical work, plumbing, repairs, and maintenance in homes, offices, and industrial buildings.')
+            },
+            {
+              question: t('Why is quality hardware important?'),
+              answer: t('Quality hardware ensures safety, durability, and long-term performance, reducing the need for frequent repairs and replacements.')
+            },
+            {
+              question: t('How do I choose the right hardware products?'),
+              answer: t('Choosing the right hardware depends on the type of work, material quality, compatibility, and safety standards required for the project.')
+            },
+            {
+              question: t('Can hardware products improve safety in buildings?'),
+              answer: t('Yes, using proper and certified hardware products helps prevent electrical faults, structural failures, and other safety risks.')
+            },
+            {
+              question: t('Are hardware products necessary for everyday home maintenance?'),
+              answer: t('Hardware products are essential for daily maintenance tasks such as fixing electrical fittings, plumbing issues, and household installations.')
+            }
+          ].map((faq, index) => (
+            <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
       </div>
