@@ -23,6 +23,9 @@ export default function RootLayout({ children }) {
 
         </script>
       </head>
+      <head>
+        <meta name="monetag" content="675a111ad604a704dab475c0a57f5fd0">
+      </head>
       <body>
         <ThemeProvider>
           <ToastProvider>
