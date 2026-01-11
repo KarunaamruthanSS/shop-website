@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://quge5.com/88/tag.min.js" data-zone="200963" async data-cfasync="false">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6241972269720165"
+            crossorigin="anonymous">
+
         </script>
       </head>
       <head>
