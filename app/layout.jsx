@@ -24,7 +24,8 @@ export default function RootLayout({ children }) {
         </script>
       </head>
       <head>
-        <script src="https://quge5.com/88/tag.min.js" data-zone="200963" async data-cfasync="false"></script>
+        <script src="https://quge5.com/88/tag.min.js" data-zone="200963" async data-cfasync="false">
+        </script>
       </head>
       <head>
         <meta name="monetag" content="675a111ad604a704dab475c0a57f5fd0">
