@@ -24,6 +24,14 @@ export default function RootLayout({ children }) {
         </script>
       </head>
       <head>
+        <script>(function(s){s.dataset.zone='10448012',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+        </script>
+      </head>
+      <head>
+        <script src="https://quge5.com/88/tag.min.js" data-zone="200963" async data-cfasync="false">
+        </script>
+      </head>
+      <head>
         <meta name="monetag" content="675a111ad604a704dab475c0a57f5fd0">
         </meta>
       </head>
