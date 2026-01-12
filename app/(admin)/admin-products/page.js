@@ -194,75 +194,112 @@ export default function AdminProducts() {
           padding: 20, 
           border: "1px solid #ddd", 
           borderRadius: 8,
-          backgroundColor: "#f8f9fa"
+          backgroundColor: "#f8f9fa",
+          maxWidth: 500
         }}>
-          <h3>{editingProduct ? "Edit Product" : "Add New Product"}</h3>
+          <h3 style={{ marginTop: 0, marginBottom: 20 }}>{editingProduct ? "Edit Product" : "Add New Product"}</h3>
           <form onSubmit={handleSubmit}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 15, marginBottom: 15 }}>
+            <div style={{ marginBottom: 15 }}>
+              <label style={{ display: "block", marginBottom: 5, fontWeight: 500 }}>Product Name *</label>
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder="Enter product name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                style={{ padding: 8 }}
+                style={{ width: "100%", padding: 10, borderRadius: 6, border: "1px solid #ccc", boxSizing: "border-box" }}
               />
+            </div>
+            <div style={{ marginBottom: 15 }}>
+              <label style={{ display: "block", marginBottom: 5, fontWeight: 500 }}>Price (₹) *</label>
               <input
                 type="number"
                 step="0.01"
-                placeholder="Price"
+                placeholder="Enter price"
                 value={formData.price}
                 onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                 required
-                style={{ padding: 8 }}
+                style={{ width: "100%", padding: 10, borderRadius: 6, border: "1px solid #ccc", boxSizing: "border-box" }}
               />
+            </div>
+            <div style={{ marginBottom: 15 }}>
+              <label style={{ display: "block", marginBottom: 5, fontWeight: 500 }}>Stock Quantity *</label>
               <input
                 type="number"
-                placeholder="Stock Quantity"
+                placeholder="Enter stock quantity"
                 value={formData.stock}
                 onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
                 required
-                style={{ padding: 8 }}
+                style={{ width: "100%", padding: 10, borderRadius: 6, border: "1px solid #ccc", boxSizing: "border-box" }}
               />
+            </div>
+            <div style={{ marginBottom: 15 }}>
+              <label style={{ display: "block", marginBottom: 5, fontWeight: 500 }}>Category</label>
               <input
                 type="text"
-                placeholder="Category"
+                placeholder="Enter category"
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                style={{ padding: 8 }}
+                style={{ width: "100%", padding: 10, borderRadius: 6, border: "1px solid #ccc", boxSizing: "border-box" }}
               />
             </div>
             <div style={{ marginBottom: 15 }}>
+              <label style={{ display: "block", marginBottom: 5, fontWeight: 500 }}>Description</label>
               <textarea
-                placeholder="Product Description"
+                placeholder="Enter product description"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                style={{ width: "100%", padding: 8, minHeight: 80 }}
+                style={{ width: "100%", padding: 10, minHeight: 100, borderRadius: 6, border: "1px solid #ccc", boxSizing: "border-box", resize: "vertical" }}
               />
             </div>
-            <div style={{ marginBottom: 15 }}>
+            <div style={{ marginBottom: 20 }}>
+              <label style={{ display: "block", marginBottom: 5, fontWeight: 500 }}>Image URL</label>
               <input
                 type="url"
-                placeholder="Image URL (optional)"
+                placeholder="Enter image URL (optional)"
                 value={formData.imageUrl}
                 onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                style={{ width: "100%", padding: 8 }}
+                style={{ width: "100%", padding: 10, borderRadius: 6, border: "1px solid #ccc", boxSizing: "border-box" }}
               />
             </div>
-            <button
-              type="submit"
-              disabled={loading}
-              style={{
-                padding: "10px 20px",
-                backgroundColor: loading ? "#ccc" : "#28a745",
-                color: "white",
-                border: "none",
-                borderRadius: 4,
-                cursor: loading ? "not-allowed" : "pointer"
-              }}
-            >
-              {loading ? "Saving..." : (editingProduct ? "Update Product" : "Add Product")}
-            </button>
+            <div style={{ display: "flex", gap: 10 }}>
+              <button
+                type="submit"
+                disabled={loading}
+                style={{
+                  flex: 1,
+                  padding: "12px 20px",
+                  backgroundColor: loading ? "#ccc" : "#28a745",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 6,
+                  cursor: loading ? "not-allowed" : "pointer",
+                  fontWeight: 500,
+                  fontSize: 16
+                }}
+              >
+                {loading ? "Saving..." : (editingProduct ? "Update Product" : "Add Product")}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowForm(false);
+                  setEditingProduct(null);
+                }}
+                style={{
+                  padding: "12px 20px",
+                  backgroundColor: "#6c757d",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 6,
+                  cursor: "pointer",
+                  fontWeight: 500,
+                  fontSize: 16
+                }}
+              >
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
       )}
