@@ -14,9 +14,9 @@ SMTP_HOST=http://localhost:3000  ❌
 # NEW (CORRECT)
 SMTP_HOST=smtp.gmail.com         ✅
 SMTP_PORT=587
-SMTP_USER=kasagojara@gmail.com
-SMTP_PASS=Jayaram@31
-FROM_EMAIL=kasagojara@gmail.com
+SMTP_USER=app@gmail.com
+SMTP_PASS=app-password
+FROM_EMAIL=app@gmail.com
 ```
 
 ### 2. **Enhanced Email Service** (`lib/email.js`)
